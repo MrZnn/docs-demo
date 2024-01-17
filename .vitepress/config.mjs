@@ -28,13 +28,17 @@ export default defineConfig({
           {text: 'react', link: '/front-end/react/'}
         ]
       },
+      {text: '后端', link: '/back-end/postgres/'},
       { text: '两边拦演示', link: '/两边拦.md'}
     ],
 
-    sidebar: { "/front-end/react": set_sidebar("/front-end/react/") },
+    sidebar: { 
+      "/front-end/react": set_sidebar("/front-end/react/"),  
+      "/back-end/postgres": set_sidebar("/back-end/postgres/"),
+    },
 
     // sidebar: false, // 关闭侧边栏
-    aside: "left", // 设置右侧侧边栏在左侧显示
+    // aside: "left", // 设置右侧侧边栏在左侧显示
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/MrZnn' }

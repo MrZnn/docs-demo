@@ -139,8 +139,7 @@
 
 
 /*    ----------------------------------------------------------------------------------------------------------------------------------------------------   */
-
-/* 自定义侧边栏在最左边，右边撑满宽度 */
+/* 
 .VPDoc .container {
   margin: 0 !important;
 }
@@ -161,21 +160,31 @@
 }
 .aside-container {
   position: fixed;
+  left: 0; 
   top: 0;
   padding-top: calc(
     var(--vp-nav-height) + var(--vp-layout-top-height, 0px) +
       var(--vp-doc-top-height, 0px) + 10px
   ) !important;
-  width: 224px;
+  width: 300px !important;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
+  border-right: 1px solid #ddd; 
 }
 
-/* 自定义h2的间距 */
 .vp-doc h2 {
   margin: 0px 0 16px;
   padding-top: 24px;
   border: none;
+} */
+
+.VPFooter {
+  height: 40px; /* 调整高度为50px，根据需要进行调整 */
+  background-color: #f0f0f0; /* 背景颜色，可以根据需要调整 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 其他样式属性，根据需要添加 */
 }
