@@ -1,0 +1,66 @@
+import { defineConfig } from 'vitepress'
+import { set_sidebar } from "./utils/auto-gen-sidebar.mjs";	// 改成自己的路径
+
+// https://vitepress.dev/reference/site-config
+export default defineConfig({
+  head:[["link", {rel: "icon", href: "/logo.png"}]],
+  title: "My Awesome Project",
+  description: "A VitePress Site",
+  themeConfig: {
+    // https://vitepress.dev/reference/default-theme-config
+    outlineTitle: "文章目录",
+    outline: [2, 6],
+    logo: "/logo.png",
+    nav: [
+      {
+        text: '家',
+        items: [
+          { text: '首页', link: '/' },
+          { text: 'markdown 示例', link: '/markdown-examples' },
+      
+        ]
+      },
+      { text: 'markdown1 示例', link: '/markdown-examples' },
+      { 
+        text: '前端',
+        items: [
+          {text: 'react', link: '/front-end/react/'}
+        ]
+      },
+      { text: '两边拦演示', link: '/两边拦.md'}
+    ],
+
+    sidebar: { "/front-end/react": set_sidebar("/front-end/react/") },
+
+    // sidebar: false, // 关闭侧边栏
+    aside: "left", // 设置右侧侧边栏在左侧显示
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/MrZnn' }
+    ],
+
+    footer: {
+      copyright: "Copyright@ 2023-present My Name"
+    },
+
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: "搜索文档",
+            buttonAriaLabel: "搜索文档"
+          },
+          modal: {
+            noResultsText: "无法找到相关结果",
+            resetButtonTitle: "清除条件查询",
+            footer: {
+              selectText: "选择",
+              navigateText: "切换"
+            },
+          },
+        },
+      },
+    },
+  }
+})
