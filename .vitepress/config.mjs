@@ -28,12 +28,19 @@ export default defineConfig({
           {text: 'react', link: '/front-end/react/'}
         ]
       },
+      { 
+        text: '语言',
+        items: [
+          {text: 'go', link: '/langages/go/'}
+        ]
+      },
       {text: '后端', link: '/back-end/postgres/'},
       { text: '两边拦演示', link: '/两边拦.md'}
     ],
 
     sidebar: { 
-      "/front-end/react": set_sidebar("/front-end/react/"),  
+      "/front-end/react": set_sidebar("/front-end/react/"),
+      "/langages/go": set_sidebar("/langages/go/"),  
       "/back-end/postgres": set_sidebar("/back-end/postgres/"),
     },
 
