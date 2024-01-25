@@ -3,7 +3,7 @@ import { set_sidebar } from "./utils/auto-gen-sidebar.mjs";	// 改成自己的�
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/docs-demo/',
+  // base: '/docs-demo/',
   head:[["link", {rel: "icon", href: "/logo.png"}]],
   title: "My Awesome Project",
   description: "A VitePress Site",
@@ -35,13 +35,19 @@ export default defineConfig({
         ]
       },
       {text: '后端', link: '/back-end/postgres/'},
-      { text: '两边拦演示', link: '/两边拦.md'}
+      { 
+        text: '杂记',
+        items: [
+          {text: 'markdown', link: '/other/markdown/'}
+        ]
+      }
     ],
 
     sidebar: { 
       "/front-end/react": set_sidebar("/front-end/react/"),
       "/langages/go": set_sidebar("/langages/go/"),  
       "/back-end/postgres": set_sidebar("/back-end/postgres/"),
+      "/other/markdown": set_sidebar("/other/markdown/"),
     },
 
     // sidebar: false, // 关闭侧边栏

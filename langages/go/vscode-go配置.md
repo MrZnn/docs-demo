@@ -70,3 +70,6 @@
     解决：可以执行说明各种包没有问题，所以飘红是VsCode 的问题。将VScode打开目录打开到 go.mod的上一级。
 
     解释：新版本下go get install 会将包依赖安装到pkg\mod下，而同时，我将工作目录打开在了我项目的go.mod的上上一级，因此 VScode只会在 src下寻找我的依赖包，不去寻找mod cache,因此找不到报错，但go环境可以找到（VSCOde为啥找不到呢，唉）可以执行。.以后注意打开的目录层级，之前一直没注意过！！！！！！！！
+
+#### 2.一个全球代理为 Go 模块而生
+    GOPROXY = "https://goproxy.io,direct"
