@@ -28,6 +28,17 @@ lang: en-US
     fmt.Println("5 seconds have passed")
     ```
 
+## time.NewTimer(5 * time.Second)：
+
+1. time.NewTimer 返回一个 time.Timer 类型的值，该值具有一个 C 属性，是一个通道 (<-chan time.Time)。
+2. time.Timer 可以在预定的时间之后向其 C 通道发送一个时间值。你可以通过 <-timer.C 操作来阻塞等待该时间值。
+3. time.Timer 提供了一些额外的方法，例如 Stop() 可以停止定时器，Reset(d time.Duration) 可以重新设置定时器的持续时间。
+    ```go
+    timer := time.NewTimer(5 * time.Second)
+    <-timer.C
+    fmt.Println("5 seconds have passed")
+    ```
+
 ## 总结
 
 &emsp;&emsp;在总体上，<-time.After(5 * time.Second) 更加灵活，它可以与 select 结合使用，可以在等待的同时执行其他任务。而 time.Sleep(5 * time.Second) 是一种直观且简单的等待方式，但在等待期间会阻塞当前 goroutine 的执行。选择使用哪种方式取决于具体的需求和场景。
