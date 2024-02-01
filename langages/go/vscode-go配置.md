@@ -62,7 +62,11 @@
     - 安装插件go 并更新Go 工具-> ctrl + shift + P 搜索 Go: Install/Update Tools：
     - 会在 bin目录下命令 在src写代码 在pkg下载第三方依赖位置
     - go插件扩展 -> 扩展设置 -> @ext:golang.go path -> "go.gopath": "D:\/GolandProjects","go.goroot": "D:\/Go" 补全
-
+4. 安装翻译插件
+    - vscode 安装插件 Comment Translate v2.3.3  
+    修改Change translate source 为bin
+    - ctrl + , 输入Comment Translate
+    ![comment_translate](comment_translate.png)
 
 ## 问题 
 
